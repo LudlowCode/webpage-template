@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nothing</title>
+    <title>Converter</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="loaded();" on>
-    <h1>Their Law</h1>
-    <img src="" alt="" style="width:200px">
-    <p>Umbrellas are evil.</p>
-    <p>Cats though...</p>
+<body onload = 'populateCurrencyDataAsync()'>
+    <h1 id="big-heading">Money converter</h1>
+    <p>Type an amount in the GBP box and hit convert.</p>
+    <input type="text" value = "enter amount in pounds" name="GBP" id="gbp">
+    <input type="text" value = "Euros will appear here..." name="GBP" id="eur">
+    <input type="button" value="Convert" onclick = "convert('GBP','EUR');">
 </body>
 </html>

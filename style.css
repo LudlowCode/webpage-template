@@ -1,3 +1,9 @@
-body{
-    background-color: #ffaa00;
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.customerQuote{
+    background-color: #e8c3e1;
+}
+#intro{
+    color:darkred;
 }
