@@ -21,11 +21,30 @@ async function populateCurrencyDataAsync() {
  * @param to - A 3 character upper-case string international currency code, e.g. 'EUR' to represent the desired currency.
  */
 function convert(from, to, data = currencyData){
-  let rate = currencyData['rates'][to] / currencyData['rates'][from];
+  let rate = data['rates'][to] / data['rates'][from];
   console.log(rate);
 
   var euros = document.getElementById('gbp').value * rate;
   console.log(euros);
   document.getElementById('eur').value = Number(euros.toFixed(2));;
     
+}
+
+async function fetchImage(url) {
+  const response = await fetch(url)
+  const blob = await response.blob()
+  
+  return blob
+}
+
+async function downloadImage(url){
+  const imageBlob = await fetchImage(url);
+  const imageURL = URL.createObjectURL(imageBlob);
+
+  console.log(imageBlob.slice(0, 100));
+  console.log({imageBase64: imageURL});
+  
+  const imgElement = document.createElement('img');
+  imgElement.src = imageURL;
+  const container = document.getElementById("image-container").appendChild(imgElement);
 }
